@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "places2leads"
+version = "0.1.0"
+description = "Turn the Foursquare Open Source Places dataset into clean, verified local-business contact lists, politely."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["duckdb>=1.0", "requests>=2.31", "dnspython>=2.4"]
+keywords = ["open data", "foursquare", "local business", "lead generation", "duckdb", "email validation"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+places2leads = "places2leads.cli:main"
+
+[tool.setuptools]
+packages = ["places2leads"]
+
+[project.urls]
+Homepage = "https://github.com/devnirwal01/places2leads"
+Issues = "https://github.com/devnirwal01/places2leads/issues"
